@@ -1,0 +1,20 @@
+<mvc:View xmlns:form="sap.ui.layout.form" 
+    controllerName="ExposicionSelectInfo.ExposicionSelectInfo.controller.Detail" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m">
+	
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <form:SimpleForm title="Detalle: {toolsModel>/shipId}">
+                <Label text="Shipper ID"/>
+                <Text text="{shipDetail>/ShipperID}"/>
+                <Label text="Company Name"/>
+                <Text text="{shipDetail>/CompanyName}"/>
+                <Label text="Phone"/>
+                <Text text="{shipDetail>/Phone}"/>
+            </form:SimpleForm>
+        </content>
+    </Page>
+			
+</mvc:View>

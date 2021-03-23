@@ -1,0 +1,38 @@
+<mvc:View 
+    controllerName="ExposicionSelectInfo.ExposicionSelectInfo.controller.Main" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+	
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <HBox>
+            <ComboBox
+				id="IdShip" 
+                items="{modelShippers>/value}" 
+                selectedKey="{modelShippers>/value>/ShipperID}" 
+                selectionChange="onSelect">
+				<core:Item key="{modelShippers>ShipperID}" text="{modelShippers>ShipperID}" />
+			</ComboBox>
+        </HBox>
+
+        <Table items="{modelShippers>/value}" itemPress="onPressCell" mode="SingleSelectMaster">
+            <columns>
+                <Column>
+                    <Text text="Ship ID"/>
+                </Column>
+            </columns>
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <Text text="{modelShippers>ShipperID}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+        </Table>
+
+        </content>
+    </Page>
+			
+</mvc:View>
